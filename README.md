@@ -39,7 +39,7 @@ At this point, mitmproxy should have logged your authenticator tokens in encrypt
 Obviously, yours will show real information about every token you have in your Authy account. Once you find this request, switch to the "Flow" tab in mitmweb, then hit "Download" to download this data into a file called "authenticator_tokens". Rename this file to "authenticator_tokens.json" and disconnect your device from the proxy (select "Off" in Settings -> Wi-Fi -> (your network) -> Configure Proxy) before exiting out of the proxy on your computer (hit Ctrl+C on the terminal window running mitmweb) and continuing to the next step.
 
 ## Step 3: Decrypting tokens
-You now have an authenticator_tokens.json file with your tokens in it, but it's encrypted and can't be used. Luckily, this file can be decrypted with your backup password and a Python script. Download the "decrypt.py" file in this repo, make sure your authenticator_tokens.json file is in the same folder as decrypt.py, and then run the Python script with `python3 decrypt.py`.
+You now have an authenticator_tokens.json file with your tokens in it, but it's encrypted and can't be used. Luckily, this file can be decrypted with your backup password and a Python script. Download the "decrypt.py" file in this repo, make sure your authenticator_tokens.json file is in the same folder as decrypt.py, and then run the Python script with `uv run decrypt`, or install the dependencies manually and run `python3 decrypt.py`.
 
 > [!NOTE]
 > If you get an error that python3 couldn't be found, install Python on your computer from [python.org](https://www.python.org). If you get an error that the "cryptography" package couldn't be found, install it with `pip3 install cryptography`.
