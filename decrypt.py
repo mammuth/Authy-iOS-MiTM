@@ -1,3 +1,11 @@
+#!/usr/bin/env -S uv run --script
+
+# /// script
+# dependencies = [
+#   "cryptography",
+# ]
+# ///
+
 import json
 import base64
 import binascii  # For base16 decoding
